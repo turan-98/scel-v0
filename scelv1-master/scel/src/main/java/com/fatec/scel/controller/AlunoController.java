@@ -1,5 +1,6 @@
 package com.fatec.scel.controller;
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,7 @@ public class AlunoController {
 			return modelAndView; // addObject adiciona objetos para view
 
 		}
+		@Transactional
 		@GetMapping("/delete/{id}")
 		public ModelAndView delete(@PathVariable("id") Long id) {
 
